@@ -1,20 +1,29 @@
+use std::process;
 
 pub struct KvStore {
 }
 
 impl KvStore {
     pub fn new() -> Self {
-        panic!();
+        Self {}
     }
     pub fn set(&mut self, key: String, value: String) {
-        panic!();
+        eprintln!("unimplemented");
+        process::exit(1);
+        unimplemented!();
+
     }
 
     pub fn remove(&mut self, key: String) {
-        panic!();
+        eprintln!("unimplemented");
+        process::exit(1);
+        unimplemented!();
+
     }
 
     pub fn get(&self, query: String) -> Option<String> {
-        panic!();
+        eprintln!("unimplemented");
+        process::exit(1);
+        unimplemented!();
     }
 }
