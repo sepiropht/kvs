@@ -4,7 +4,7 @@ use clap::App;
 use kvs::KvStore;
 use std::process;
 
-fn main () {
+fn main() {
     let yaml = load_yaml!("cli.yml");
     let matches = App::from_yaml(yaml).get_matches();
     let config = matches.value_of("config").unwrap_or("default.conf");
@@ -58,10 +58,6 @@ fn main () {
             println!("Printing normally...");
         }
     }
-        match matches.occurrences_of("V") {
-            1=> println!("{}", env!("CARGO_PKG_VERSION")),
-            3 | _ => println!("Don't be crazy"),
-        }
 
     process::exit(1);
 }

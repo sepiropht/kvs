@@ -153,4 +153,3 @@ fn remove_key() {
     store.remove("key1".to_owned());
     assert_eq!(store.get("key1".to_owned()), None);
 }
-
