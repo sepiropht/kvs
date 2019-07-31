@@ -13,19 +13,19 @@ impl KvStore {
         Self { store }
     }
 
-    pub fn set(&mut self, key: String, value: String) {
+    pub fn set(&mut self, key: String, value: String) -> Result<()> {
         unimplemented!();
     }
 
-    pub fn remove(&mut self, key: String) {
+    pub fn remove(&mut self, key: String) -> Result<()> {
       unimplemented!();
     }
 
-    pub fn get(&self, key: &Path) -> Option<String> {
+    pub fn get(&self, key: String) -> Result<Option<String>> {
         let key : &str = "aze";
         unimplemented!();
     }
-    pub fn open(path: &Path) -> Result<(KvStore, String)> {
+    pub fn open(path: &Path) -> Result<(Self)> {
         unimplemented!();
     }
 }

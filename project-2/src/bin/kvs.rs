@@ -3,6 +3,7 @@ extern crate clap;
 use clap::App;
 use kvs::KvStore;
 use std::process;
+use std::path::Path;
 
 fn main() {
     let yaml = load_yaml!("cli.yml");
@@ -19,7 +20,7 @@ fn main() {
             println!("Value for key: {}", key.to_string());
 
             match store.get(key.to_string()) {
-                Some(v) => println!("{}", v),
+                Ok(v) => println!("{:?}", v),
                 _ => {
                     eprintln!("unimplemented");
                     process::exit(1);
@@ -36,7 +37,7 @@ fn main() {
             println!("Value for key: {}", key.to_string());
 
             match store.get(key.to_string()) {
-                Some(v) => println!("{}", v),
+                Ok(v) => println!("{:?}", v),
                 _ => {
                     eprintln!("unimplemented");
                     process::exit(1);
